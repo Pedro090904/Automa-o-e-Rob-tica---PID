@@ -1,0 +1,96 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.2593061638576053 -0.2160789348594063 -0.9413130230138522 4.471885165402314
+  position 22.16468252465237 -108.73572527860834 79.94912755127609
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 100 100
+}
+Robot {
+  translation 8.590159791204096e-18 2.5555071123604413e-17 0.04966300115829936
+  rotation 0.9046312491121672 0.15964080866681268 0.3951671992182122 1.602318273189452e-16
+  children [
+    HingeJoint {
+      device [
+        RotationalMotor {
+          name "right_motor"
+        }
+      ]
+      endPoint Solid {
+        rotation -0.9548726258419219 -0.1688344438746355 0.24436284287774857 2.5029095408273867e-16
+        children [
+          Shape {
+            geometry Cylinder {
+              height 0.1
+              radius 0.05
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject Cylinder {
+          height 0.1
+          radius 0.05
+        }
+        physics Physics {
+        }
+        linearVelocity -8.934296389827967e-17 7.623193230270594e-17 7.211473763052455e-13
+        angularVelocity -1.1925083503566507e-15 -1.5553532372219925e-15 1.2298216699845563e-16
+      }
+    }
+    HingeJoint {
+      device [
+        RotationalMotor {
+          name "left_motor"
+        }
+      ]
+      endPoint Solid {
+        rotation 0.05040067860890658 -0.9389312105395863 0.34039382114020345 1.8024732211482642e-16
+        children [
+          Shape {
+            geometry Cylinder {
+              height 0.1
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject Cylinder {
+          height 0.1
+          radius 0.05
+        }
+        physics Physics {
+        }
+        linearVelocity -3.371031045326088e-17 7.546148992002809e-17 7.212197506816232e-13
+        angularVelocity -2.4961086509070233e-15 -3.2365523425097863e-16 1.2649815227794403e-16
+      }
+    }
+    InertialUnit {
+      name "imu"
+    }
+    Shape {
+      geometry Mesh {
+        url [
+          "../tinker.obj"
+        ]
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  controller "roboo_controller"
+  linearVelocity -9.539989998309662e-17 6.804626264712723e-17 3.4833647077903147e-13
+  angularVelocity -5.329070518200748e-16 -7.993605777301122e-16 1.2457631740082065e-16
+}
