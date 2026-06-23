@@ -4,25 +4,6 @@ Este repositório contém o código-fonte, os esquemáticos elétricos e a docum
 
 O sistema baseia-se no clássico problema de controlo do Pêndulo Invertido, utilizando um controlador PID em malha fechada processado num Arduino Uno.
 
-📁 Estrutura do Repositório
-
-Para manter o projeto organizado, os ficheiros estão divididos nas seguintes pastas:
-
-/
-├── firmware/               # Código-fonte do microcontrolador
-│   ├── src/                # Lógica principal (main.cpp)
-│   ├── lib/                # Bibliotecas auxiliares (PID_v1, I2Cdev, etc.)
-│   └── platformio.ini      # Configuração do ambiente PlatformIO
-├── hardware/               # Circuitos e Eletrónica
-│   ├── esquematicos/       # Ficheiros do Fritzing/Proteus ou imagens do circuito
-│   └── componentes.md      # Lista detalhada de materiais (BOM)
-├── mecanica/               # Estrutura e Simulação
-│   ├── webots/             # Ficheiros do projeto no simulador Webots
-│   └── fotos_prototipo/    # Imagens do chassi construído em papelão
-└── docs/                   # Documentação Académica
-    ├── relatorios/         # Ficheiros PDF finais (PC1, PC2, PC3 e PC4)
-    └── latex/              # Código-fonte LaTeX utilizado na escrita dos relatórios
-
 
 🛠️ Tecnologias e Hardware Utilizado
 

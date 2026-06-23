@@ -1,0 +1,105 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.17163026758525157 -0.18055988262439654 -0.9684736341456484 4.731057651076297
+  position -0.25409944169185034 -2.903110192403318 0.9745116852076376
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 4 4
+}
+Robot {
+  translation 0.149933 1.42734e-06 0.119521
+  rotation -0.004008599910108812 -0.9968899776451562 0.07870389823509776 -0.0011053071795865677
+  children [
+    Gyro {
+    }
+    DEF imu InertialUnit {
+      name "imu"
+      boundingObject Box {
+        size 0.1 0.1 0.1
+      }
+      physics Physics {
+      }
+    }
+    DEF Body Pose {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.878431 0.882353
+          }
+          geometry Box {
+            size 0.1 0.1 0.2
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -9.19222152082435
+        axis 0 1 0
+        anchor 0 0.069944 -0.0699841
+      }
+      device [
+        DEF motor1 RotationalMotor {
+          name "motor1"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation 4.65165477108994e-06 0.06994399999982605 -0.06998519347169598
+        rotation -0.08228085234565696 0.7049896433653916 -0.7044284662652484 3.3059147054728757
+        children [
+          DEF wheel Shape {
+            geometry Cylinder {
+              height 0.03
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics DEF wheel_physx Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -9.192221764014894
+        axis 0 1 0
+        anchor 0 -0.069944 -0.0699841
+      }
+      device [
+        RotationalMotor {
+          name "motor2"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation 4.651557807277582e-06 -0.06994400000017376 -0.06998519344770997
+        rotation -0.08228076602069678 0.7049896491732475 -0.7044284705359578 3.3059145342050673
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.2
+  }
+  physics Physics {
+  }
+  controller "rb_controller"
+}
